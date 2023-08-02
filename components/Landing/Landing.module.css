@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@700&display=swap");
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.article h2 {
+  font-family: "Tektur";
+  font-size: 4rem;
+}
+
+.article p {
+  width: 300px;
+}
+
+.article button {
+  padding: .8rem 1.5rem;
+  background-color: #313132;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+.container {
+  padding: 2rem 5rem;
+}
+
+.mainImg {
+  width: 450px;
+}
+
+.search {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  padding: 1.5rem 4rem;
+  /* width: 100%; */
+  background-color: #313132;
+}
+
+.search div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.search input {
+  background-color: #1b1c1c;
+  outline: none;
+  border: none;
+  height: 3rem;
+  border-radius: 10px;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.search button {
+  margin-top: 1rem;
+  height: 2.5rem;
+  font-weight: bold;
+  background-color: #ebebeb;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+.search label {
+  margin-bottom: .5rem;
+}
+
+@media (max-width: 768px) {
+  .search {
+    flex-direction: column;
+    margin-right: 2rem; 
+    margin-left: 2rem; 
+  }
+  
+  .search input {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  .search button {
+    width: 100%;
+  }
+
+  .search div {
+    width: 100%
+  }
+
+  .main {
+    flex-direction: column-reverse;
+    
+  }
+
+  .main {
+    padding: 2rem 3rem;
+  }
+
+  .container {
+    background: radial-gradient(
+      circle at 50% 20%,
+      rgba(255, 255, 255, 0.5) 10%,
+      rgba(22, 22, 22, 0.5) 40%
+    );
+    margin: 0 0 4rem 0;
+    padding: 0;
+  }
+}

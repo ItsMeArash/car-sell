@@ -1,3 +1,11 @@
+import Benefits from "@/components/Benefits/Benefits";
+import Landing from "@/components/Landing/Landing";
+import Sponsors from "@/components/Sponsors/Sponsors";
+
 export default function Home() {
-  return (<h1>Car Sell</h1>)
+  return <div>
+    <Landing />
+    <Sponsors />
+    <Benefits />
+  </div>
 }

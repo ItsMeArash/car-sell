@@ -1,0 +1,51 @@
+.header,
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+background: rgba(0, 0, 0, 0.33);
+border-radius: 5px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.9px);
+border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.list li {
+  list-style-type: none;
+}
+
+.list li:not(.list li:last-child) {
+  padding-right: 1rem;
+}
+
+.footer {
+  background-color: #313132;
+  height: 35px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+
+.signIn {
+  background: none;
+  color: #fff;
+  outline: none;
+  border: none;
+  margin-right: 1rem;
+}
+.signUp {
+  padding: .5rem 1rem;
+  background-color: #313132;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}

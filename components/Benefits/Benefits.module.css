@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
   padding: 5rem;
+  gap: 3rem;
+  justify-content: space-evenly;
 }
 
 .iconContainer {
@@ -21,7 +23,7 @@
 
 .item {
   width: 300px;
-  height: 300px;
+  /* height: 300px; */
   border: 2px solid #313132;
   border-radius: 15px;
   padding: 1rem 2rem;
@@ -43,6 +45,5 @@
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    gap: 3rem;
   }
 }

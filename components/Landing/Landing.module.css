@@ -1,51 +1,91 @@
-@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@700&display=swap");
-
-.main {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.article {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.article h2 {
-  font-family: "Tektur";
-  font-size: 4rem;
-}
-
-.article p {
-  width: 300px;
-}
-
-.article button {
-  padding: .8rem 1.5rem;
-  background-color: #313132;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
+/*
 .container {
   padding: 2rem 5rem;
+  background: radial-gradient(
+      circle at 75% 40%,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(22, 22, 22, 0.5) 37%
+    );
 }
 
 .mainImg {
   width: 450px;
 }
 
+
+
+
+
+@media (min-width: 768px) {
+  .search input {
+    width: 300px;
+  }
+  .mainImg {
+    transform: scale(1.5);
+  }
+}
+
+@media (min-width: 1400px) {
+  .search {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@700&display=swap");
+
+.container {
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(255, 255, 255, 0.5) 10%,
+    rgba(22, 22, 22, 0.5) 40%
+  );
+  margin-bottom: 4rem;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem 3rem;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+.article h2 {
+  font-family: "Tektur";
+  font-size: 4rem;
+  z-index: 1;
+}
+.article p {
+  width: 60%;
+}
+.article button {
+  padding: 0.8rem 1.5rem;
+  background-color: #313132;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
 .search {
   margin-top: 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   border-radius: 15px;
   padding: 1.5rem 4rem;
-  /* width: 100%; */
   background-color: #313132;
+  margin-right: 2rem;
+  margin-left: 2rem;
 }
 
 .search div {
@@ -53,6 +93,7 @@
   flex-direction: column;
   align-items: start;
   justify-content: center;
+  width: 100%;
 }
 .search input {
   background-color: #1b1c1c;
@@ -62,57 +103,81 @@
   border-radius: 10px;
   color: #fff;
   padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .search button {
   margin-top: 1rem;
-  height: 2.5rem;
   font-weight: bold;
   background-color: #ebebeb;
   border: none;
-  outline: none;
   border-radius: 10px;
-}
-.search label {
-  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
-  .search {
-    flex-direction: column;
-    margin-right: 2rem; 
-    margin-left: 2rem; 
+.search label {
+  margin-bottom: 0.5rem;
+}
+
+.mainImg {
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .mainImg {
+    transform: scale(1.2);
   }
-  
-  .search input {
-    margin-bottom: 1.5rem;
-    width: 100%;
+
+  .search {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    background: radial-gradient(
+      circle at 70% 20%,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(22, 22, 22, 0.5) 55%
+    );
+  }
+
+  .main {
+    flex-direction: row;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .article {
+    margin-top: 3rem;
+  }
+
+  .search {
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 1200px;
   }
 
   .search button {
-    width: 100%;
+    width: 50%;
+    transform: translateY(-7px);
   }
+}
 
-  .search div {
-    width: 100%
-  }
-
-  .main {
-    flex-direction: column-reverse;
-    
-  }
-
-  .main {
-    padding: 2rem 3rem;
-  }
-
-  .container {
-    background: radial-gradient(
-      circle at 50% 20%,
-      rgba(255, 255, 255, 0.5) 10%,
-      rgba(22, 22, 22, 0.5) 40%
-    );
-    margin: 0 0 4rem 0;
-    padding: 0;
+@media (min-width: 1300px) {
+  .mainImg {
+    margin-top: 5rem;
+    transform: scale(1.6);
   }
 }

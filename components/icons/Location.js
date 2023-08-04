@@ -6,6 +6,7 @@ function Location() {
       viewBox="0 0 24 24"
       stroke="currentColor"
       width="22"
+      
     >
       <path
         strokeLinecap="round"

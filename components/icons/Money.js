@@ -2,7 +2,7 @@ import React from "react";
 
 function Money() {
   return (
-    <svg x="0px" y="0px" width="40" viewBox="0 0 486.501 486.501">
+    <svg style={{ fill: 'white' }} x="0px" y="0px" width="40" viewBox="0 0 486.501 486.501">
       <g>
         <g>
           <path

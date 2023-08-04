@@ -4,7 +4,7 @@ function Road() {
       <title>road_line</title>
       <g
         id="页面-1"
-        stroke="none"
+        stroke="white"
         strokeWidth="1"
         fill="none"
         fillRule="evenodd"

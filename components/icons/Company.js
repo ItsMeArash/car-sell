@@ -1,6 +1,6 @@
 function Company() {
   return (
-    <svg x="0px" y="0px" viewBox="0 0 485 485" width="20">
+    <svg style={{ fill: 'white' }} x="0px" y="0px" viewBox="0 0 485 485" width="20">
       <g>
         <rect x="379.458" y="335.263" width="30" height="64.737" />
         <rect x="379.458" y="230.026" width="30" height="64.737" />

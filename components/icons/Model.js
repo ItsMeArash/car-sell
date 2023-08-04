@@ -1,6 +1,7 @@
 function Model() {
   return (
     <svg
+      style={{ fill: "white" }}
       x="0px"
       y="0px"
       width="20px"

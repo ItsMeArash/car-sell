@@ -1,4 +1,6 @@
+import Link from "next/link";
 import demon from "../../public/images/demon-front.png";
+import Search from "../shared/Search/Search";
 import styles from "./Landing.module.css";
 
 const Landing = () => {
@@ -13,38 +15,14 @@ const Landing = () => {
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           </p>
           <div>
-            <button>All Cars</button>
+            <button>
+              <Link href="/cars">All Cars</Link>
+            </button>
           </div>
         </article>
         <img className={styles.mainImg} src={demon.src} alt="demon" />
       </main>
-      <section className={styles.search}>
-        <div className={styles.minPrice}>
-          <label htmlFor="min-price">Min Price</label>
-          <input
-            type="text"
-            name="min-price"
-            placeholder="&#9660; Enter your start price"
-          />
-        </div>
-        <div className={styles.maxprice}>
-          <label htmlFor="max-price">Max Price</label>
-          <input
-            type="text"
-            name="max-price"
-            placeholder="Enter your ending price"
-          />
-        </div>
-        <button>
-          <p>Show Cars</p>
-          <img
-            width="25"
-            height="25"
-            src="https://img.icons8.com/ios-glyphs/30/visible--v1.png"
-            alt="visible--v1"
-          />
-        </button>
-      </section>
+      <Search />
     </div>
   );
 };

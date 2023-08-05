@@ -14,7 +14,6 @@
   padding: 2rem 3rem;
   margin: 1rem;
   border-radius: 25px;
-
 }
 
 .details h1 {
@@ -29,7 +28,48 @@
 
 .detailsLabel {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
+}
+
+.payment {
+  background-color: #313232;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  /* min-width: 60%; */
+  /* max-width: 90%; */
+  width: 90%;
+  border-radius: 25px;
+}
+
+.priceRow {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.priceLabel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.payment button {
+  padding: 1rem 2rem;
+  width: 50%;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.payment button:hover, .arrowContainer:hover {
+  transition: filter 0.1s ease-in;
+  filter: brightness(0.8);
+}
+.payment button:not(:hover), .arrowContainer:not(:hover) {
+  transition: filter 0.1s ease-in;
 }
 
 .show {
@@ -43,12 +83,11 @@
 .arrowContainer {
   cursor: pointer;
 }
-
-
+ 
 
 .description {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
 }

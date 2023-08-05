@@ -79,6 +79,17 @@ const CarSection = ({ carDetails }) => {
         </div>
       </div>
 
+      <div className={styles.payment}>
+        <div className={styles.priceRow}>
+          <div className={styles.priceLabel}>
+            <Money />
+            <span>Price</span>
+          </div>
+          <div className={styles.priceValue}>${price}</div>
+        </div>
+        <button>Buy</button>
+      </div>
+
       <div className={styles.description}>
         <h4>Car Description</h4>
         <div
@@ -88,11 +99,8 @@ const CarSection = ({ carDetails }) => {
           onClick={toggleDescription}
         >
           <DownArrow />
-          
         </div>
-        {
-            showingMore && <p>{description}</p>
-          }
+        {showingMore && <p>{description}</p>}
       </div>
     </div>
   );

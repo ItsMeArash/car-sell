@@ -4,7 +4,7 @@ const RelatedCars = (props) => {
   const category = props.category;
   console.log(props);
   return (
-    <div>
+    <div className={styles.container}>
       {category}
     </div>
   );

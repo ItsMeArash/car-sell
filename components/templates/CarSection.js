@@ -87,13 +87,13 @@ const CarSection = ({ carDetails }) => {
           </div>
           <div className={styles.priceValue}>${price}</div>
         </div>
-        <button>Buy</button>
+        <button className={styles.hover}>Buy</button>
       </div>
 
       <div className={styles.description}>
         <h4>Car Description</h4>
         <div
-          className={`${styles.arrowContainer} ${
+          className={`${styles.arrowContainer} ${styles.hover} ${
             showingMore ? styles.notShow : styles.show
           }`}
           onClick={toggleDescription}

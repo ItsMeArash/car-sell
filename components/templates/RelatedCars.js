@@ -1,12 +1,19 @@
-import styles from "./RelatedCars.module.css"
+import carsData from "@/data/carsData";
+import styles from "./RelatedCars.module.css";
+import Card from "../modules/Card";
 
 const RelatedCars = (props) => {
   const category = props.category;
-  console.log(props);
+  const relatedCars = carsData.filter((car) => car.category === category);
   return (
-    <div className={styles.container}>
-      {category}
-    </div>
+    <>
+    <h4 className={styles.heading}>Other cars in {category} category</h4>
+      <div className={styles.container}>
+        {relatedCars.map((car) => (
+          <Card {...car} />
+        ))}
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,7 @@
+import { useState } from "react";
 import Calender from "../icons/Calender";
 import Company from "../icons/Company";
+import DownArrow from "../icons/DownArrow";
 import Location from "../icons/Location";
 import Model from "../icons/Model";
 import Money from "../icons/Money";
@@ -19,75 +21,79 @@ const CarSection = ({ carDetails }) => {
     description,
     category,
   } = carDetails;
+
+  const [showingMore, setShowingMore] = useState(false);
+
+  const toggleDescription = () => {
+    setShowingMore(!showingMore);
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.mainSection}>
-        <img src={image} alt="car-image" />
+      <div className={styles.firstSection}>
+        <img src={image} alt="car-photo" />
         <div className={styles.details}>
           <h1>
             {name} {model}
           </h1>
-          <div className={styles.itemRow}>
-            <div className={styles.itemLabel}>
-              <div className={styles.itemIcon}>
-                <Company />
-              </div>
+
+          <div className={styles.detailsRow}>
+            <div className={styles.detailsLabel}>
+              <Company />
               <span>Manufacturer</span>
             </div>
-            <span className={styles.itemValue}>{name}</span>
+            <span>{name}</span>
           </div>
-          <div className={styles.itemRow}>
-            <div className={styles.itemLabel}>
-              <div className={styles.itemIcon}>
-                <Model />
-              </div>
+
+          <div className={styles.detailsRow}>
+            <div className={styles.detailsLabel}>
+              <Model />
               <span>Model</span>
             </div>
-            <span className={styles.itemValue}>{model}</span>
+            <span>{model}</span>
           </div>
-          <div className={styles.itemRow}>
-            <div className={styles.itemLabel}>
-              <div className={styles.itemIcon}>
-                <Calender />
-              </div>
-              <span>First Registration</span>
+
+          <div className={styles.detailsRow}>
+            <div className={styles.detailsLabel}>
+              <Calender />
+              <span>Make Year</span>
             </div>
-            <span className={styles.itemValue}>{year}</span>
+            <span>{year}</span>
           </div>
-          <div className={styles.itemRow}>
-            <div className={styles.itemLabel}>
-              <div className={styles.itemIcon}>
-                <Road />
-              </div>
+
+          <div className={styles.detailsRow}>
+            <div className={styles.detailsLabel}>
+              <Road />
               <span>KMs Driven</span>
             </div>
-            <span className={styles.itemValue}>{distance}</span>
+            <span>{distance}</span>
           </div>
-          <div className={styles.itemRow}>
-            <div className={styles.itemLabel}>
-              <div className={styles.itemIcon}>
-                <Location />
-              </div>
+
+          <div className={styles.detailsRow}>
+            <div className={styles.detailsLabel}>
+              <Location />
               <span>Location</span>
             </div>
-            <span className={styles.itemValue}>{location}</span>
+            <span>{location}</span>
           </div>
         </div>
       </div>
+
       <div className={styles.description}>
         <h4>Car Description</h4>
-        <p>{description}</p>
-      </div>
-      <div className={styles.priceRow}>
-        <div className={styles.priceLabel}>
-          <div className={styles.priceIcon}>
-            <Money />
-          </div>
-          <span>Price</span>
+        <div
+          className={`${styles.arrowContainer} ${
+            showingMore ? styles.notShow : styles.show
+          }`}
+          onClick={toggleDescription}
+        >
+          <DownArrow />
+          
         </div>
-        <span className={styles.priceValue}>${price}</span>
+        {
+            showingMore && <p>{description}</p>
+          }
       </div>
-      <button className={styles.buyButton}>Buy</button>
     </div>
   );
 };

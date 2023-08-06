@@ -1,8 +1,35 @@
-import styles from "./Search.module.css"
+import Suv from "@/components/icons/Suv";
+import styles from "./Search.module.css";
+import Hatchback from "@/components/icons/Hatchback";
+import Sport from "@/components/icons/Sport";
+import Sedan from "@/components/icons/Sedan";
+import Link from "next/link";
 
 const Search = () => {
+  const categoryLookUp = [
+    {
+      category: "Suv",
+      icon: <Suv />,
+    },
+
+    {
+      category: "Sport",
+      icon: <Sport />,
+    },
+
+    {
+      category: "Sedan",
+      icon: <Sedan />,
+    },
+
+    {
+      category: "Hatchback",
+      icon: <Hatchback />,
+    },
+  ];
   return (
-    <section className={styles.search}>
+    <div className={styles.container}>
+      <section className={styles.search}>
         <div className={styles.minPrice}>
           <label htmlFor="min-price">Min Price</label>
           <input
@@ -29,6 +56,20 @@ const Search = () => {
           />
         </button>
       </section>
+      <section className={styles.categories}>
+        {categoryLookUp.map((category) => (
+          <Link
+            key={category.category}
+            href={`/category/${category.category.toLocaleLowerCase()}`}
+          >
+            <div className={styles.category}>
+              {category.icon}
+              <p>{category.category}</p>
+            </div>
+          </Link>
+        ))}
+      </section>
+    </div>
   );
 };
 

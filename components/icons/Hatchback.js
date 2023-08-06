@@ -6,6 +6,7 @@ function Hatchback() {
       width="30px"
       height="30px"
       viewBox="0 0 485.838 485.839"
+      fill="white"
     >
       <g>
         <g>

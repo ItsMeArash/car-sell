@@ -1,6 +1,6 @@
 function Sport() {
   return (
-    <svg x="0px" y="0px" width="30" height="30" viewBox="0 0 491.73 491.729">
+    <svg fill="white" x="0px" y="0px" width="30" height="30" viewBox="0 0 491.73 491.729">
       <g>
         <g>
           <path

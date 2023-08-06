@@ -1,9 +1,13 @@
-import Suv from "@/components/icons/Suv";
+import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 import styles from "./Search.module.css";
+
+import Suv from "@/components/icons/Suv";
 import Hatchback from "@/components/icons/Hatchback";
 import Sport from "@/components/icons/Sport";
 import Sedan from "@/components/icons/Sedan";
-import Link from "next/link";
 
 const Search = () => {
   const categoryLookUp = [
@@ -27,6 +31,20 @@ const Search = () => {
       icon: <Hatchback />,
     },
   ];
+
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+
+  const router = useRouter();
+
+  const searchHandler = () => {
+    if (minPrice && maxPrice && minPrice <= maxPrice) {
+      router.push(`/filter/${minPrice}/${maxPrice}`);
+    } else {
+      alert("Please fill in both min and max prices correctly")
+    }
+  };
+
   return (
     <div className={styles.container}>
       <section className={styles.search}>
@@ -35,7 +53,13 @@ const Search = () => {
           <input
             type="text"
             name="min-price"
-            placeholder="&#9660; Enter your start price"
+            placeholder="Enter your start price"
+            value={minPrice}
+            onChange={(event) => {
+              const input = event.target.value;
+              const numericInput = input.replace(/[^0-9]/g, "");
+              setMinPrice(numericInput);
+            }}
           />
         </div>
         <div className={styles.maxprice}>
@@ -44,9 +68,15 @@ const Search = () => {
             type="text"
             name="max-price"
             placeholder="Enter your ending price"
+            value={maxPrice}
+            onChange={(event) => {
+              const input = event.target.value;
+              const numericInput = input.replace(/[^0-9]/g, "");
+              setMaxPrice(numericInput);
+            }}
           />
         </div>
-        <button>
+        <button onClick={searchHandler}>
           <p>Show Cars</p>
           <img
             width="25"
@@ -56,6 +86,7 @@ const Search = () => {
           />
         </button>
       </section>
+      <p style={{marginTop: "2rem"}}>Or show by category</p>
       <section className={styles.categories}>
         {categoryLookUp.map((category) => (
           <Link

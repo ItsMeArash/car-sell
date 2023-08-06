@@ -1,0 +1,16 @@
+.container {
+  margin-top: 5rem;;
+}
+
+.carsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.noMatch {
+  font-size: 1.7rem;
+  margin: 2rem;
+}

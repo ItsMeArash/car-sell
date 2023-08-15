@@ -1,13 +1,8 @@
 import CarSection from "@/components/templates/CarSection";
 import RelatedCars from "@/components/templates/RelatedCars";
 import carsData from "@/data/carsData";
-import { useRouter } from "next/router";
 
-const CarDetails = () => {
-  const router = useRouter();
-  const carId = router.query.carId;
-  const carDetails = carsData[carId - 1];
-
+const CarDetails = ({ carDetails }) => {
   return (
     <div style={{marginTop: "5rem"}}>
       <CarSection carDetails={carDetails} />
@@ -15,5 +10,24 @@ const CarDetails = () => {
     </div>
   );
 };
+
+export async function getStaticPaths() {
+  const paths = carsData.map((car, index) => ({
+    params: { carId: (index + 1).toString() },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const carId = parseInt(params.carId, 10);
+  const carDetails = carsData[carId - 1];
+
+  return {
+    props: {
+      carDetails,
+    },
+  };
+}
 
 export default CarDetails;
